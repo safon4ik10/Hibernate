@@ -7,14 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "PERSONS")
 @Data
 @NoArgsConstructor
 @IdClass(PersonKey.class)
-public class Person implements Serializable {
+public class Person {
     @Id
     private String name;
     @Id
