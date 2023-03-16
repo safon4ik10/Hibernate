@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Table(name = "PERSONS")
 @Data
 @NoArgsConstructor
-@IdClass(Person.class)
+@IdClass(PersonKey.class)
 public class Person implements Serializable {
     @Id
     private String name;
@@ -23,4 +23,14 @@ public class Person implements Serializable {
     private int age;
     private String phoneNumber;
     private String cityOfLiving;
+
+    public PersonKey getId() {
+        return new PersonKey(name, surname, age);
+    }
+
+    public void setId(PersonKey personKey){
+        this.name = personKey.getName();
+        this.surname = personKey.getSurname();
+        this.age = personKey.getAge();
+    }
 }
