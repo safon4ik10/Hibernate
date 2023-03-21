@@ -11,7 +11,7 @@ import java.util.Optional;
 @RestController
 public class Controller {
     @Autowired
-    Repository repository;
+    private final Repository repository;
 
     public Controller(Repository repository) {
         this.repository = repository;
